@@ -5,7 +5,8 @@ import {
 } from 'react-native';
 
 import { TextInput } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 
@@ -17,48 +18,61 @@ export default function View2() {
     return (
         <View style={styles.container}>
             <View style={styles.container1}>
-            <Text style={styles.Label}>EMAIL ID</Text>
+                <Text style={styles.Label}>EMAIL ID</Text>
 
-            <TextInput
-                style={styles.Field}
-                placeholder=" Enter username/Phone No."
-            />
-            <Separator />
+                <TextInput
+                    style={styles.SectionStyle}
+                    placeholder=" Enter username/Phone No."
+                />
+                <Separator />
+                <Text style={styles.Label}>PASSWORD</Text>
+
+                <View style={styles.SectionStyle}>
+
+                    <TextInput
+                        style={{ flex: 1 }}
+                        secureTextEntry={true}
+                        placeholder=" &#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+
+                    />
+                    <Icon name="eye" size={20} color="#E8E9E9" />
+
+                </View>
+
+                <Separator />
+
+                <TouchableOpacity
+                    style={styles.SubmitButtonStyle}
+                >
+
+                    <Text style={styles.ButtonTextStyle}> CONTINUE </Text>
+
+                </TouchableOpacity>
+                <Separator />
+
+                <Text style={styles.ButtonTextStyle}> OR </Text>
+
+                <Separator />
 
 
-            <Text style={styles.Label}>PASSWORD</Text>
+                <View style={styles.FaceID}>
+                   <Icon name="face-recognition" size={30} color="#E8E9E9" />
 
-            <TextInput
+                    <TouchableOpacity
+                    
+                        style={{ flex: 1 }}
+                        secureTextEntry={true}
 
-                style={styles.Field}
-                secureTextEntry={true}
-                placeholder=" &#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
-            />
-                        <Icon name="eye" size={20} color="#900" />
+                    >
+                        <Text style={styles.ButtonTextStyle}> LOGIN WITH FACE ID </Text>
 
-            <Separator />
+                    </TouchableOpacity>
 
-            <TouchableOpacity
-                style={styles.SubmitButtonStyle}
-            >
 
-                <Text style={styles.ButtonTextStyle}> CONTINUE </Text>
+                </View>
 
-            </TouchableOpacity>
-            <Separator />
 
-            <Text style={styles.ButtonTextStyle}> OR </Text>
-
-            <Separator />
-
-            <TouchableOpacity
-                style={styles.FaceID}
-            >
-
-                <Text style={styles.ButtonTextStyle}> LOGIN WITH FACE ID </Text>
-
-            </TouchableOpacity>
-            <Separator/>
+                <Separator />
             </View>
             <View style={styles.separator2}>
                 <Text style={styles.ButtonTextStyle}>
@@ -71,7 +85,6 @@ export default function View2() {
             </View>
 
         </View>
-
 
 
 
@@ -98,18 +111,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         marginBottom: 36
-    },
-
-
-    Field: {
-
-        marginTop: 10,
-        paddingTop: 15,
-        paddingBottom: 15,
-        marginLeft: 30,
-        marginRight: 30,
-        backgroundColor: '#3F484A',
-        borderRadius: 10,
     },
 
 
@@ -157,13 +158,33 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 2,
         borderColor: "#dbdbd9",
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
 
     },
 
     cont: {
 
         marginBottom: 2
-    }
+    },
+
+    SectionStyle: {
+
+
+        marginTop: 10,
+        paddingTop: 15,
+        paddingBottom: 15,
+        marginLeft: 30,
+        marginRight: 30,
+        backgroundColor: '#3F484A',
+        borderRadius: 10,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+
 
 
 
